@@ -12,7 +12,10 @@ def is_safe(queens, x, y):
             return False
     return True
 
+
 checked_state = 0
+
+
 # metoda generujaca potomków
 def generate_children(state, N):
     global checked_state
@@ -25,7 +28,7 @@ def generate_children(state, N):
     #taken_columns = {qy for _, qy in state}
 
     for y in range(N):
-        # if y not in taken_columns and is_safe(state, x, y):
+        #if y not in taken_columns and is_safe(state, x, y):
         if is_safe(state, x, y):
             # tworzenie nowego stanu
             new_state = state + [(x, y)]
@@ -44,7 +47,6 @@ def bfs_n_hetman(N):
     # kolejka FIFO BFS
     Open = deque([[]])
     Closed = set()
-
 
     while Open:
         # pobranie pierwszego stanu zkolejki
@@ -116,10 +118,13 @@ def dfs_n_hetman(N):
 def run_experiments():
     queens_list = [4, 5, 6, 7, 8, 9, 10]
     results = []
+    # zapis do pliku
+    output_lines = []
 
     for N in queens_list:
-        print(f"Exsperymenty dla n-hetmanów\n")
+        print("Exsperymenty dla n-hetmanów\n")
 
+        output_lines.append("Exsperymenty dla n-hetmanów\n")
         # BFS
         bfs_solutions, bfs_time, bfs_closed_state, bfs_open_states = bfs_n_hetman(N)
 
@@ -142,6 +147,14 @@ def run_experiments():
         print(f" BFS - czas: {bfs_time:.8f} s, stany Closed: {bfs_closed_state}, stany Open: {bfs_open_states}")
         print(f" DFS - czas: {dfs_time:.8f} s, stany Closed: {dfs_closed_state}, stany Open: {dfs_open_states}")
         print('=' * 50)
+
+        output_lines.append(f"wynik dla N = {N}")
+        output_lines.append(f" BFS - czas: {bfs_time:.8f} s, stany Closed: {bfs_closed_state}, stany Open: {bfs_open_states}")
+        output_lines.append(f" DFS - czas: {dfs_time:.8f} s, stany Closed: {dfs_closed_state}, stany Open: {dfs_open_states}")
+        output_lines.append('=' * 50)
+
+    with open("wyniki_eksperiments.txt", "w") as file:
+        file.write("\n".join(output_lines))
 
     return pd.DataFrame(results)
 
@@ -181,6 +194,7 @@ def plot_results(df_results):
     axes[2].grid(True)
 
     plt.tight_layout()
+    plt.savefig("wyniki_plot.png")
     plt.show()
 
 
@@ -194,6 +208,6 @@ WNIOSKI:
 
 Algorytm DFS okazał się bardziej wydajny pod wzgledem czasowym niż BFS, szczególnie gdy N rośnie.
 Jednak mimo wszystko algorytm BFS lepiej systematyzuje przeszukiwanie, ale zajmuje coraz wiecej pamieci gdy N rośnie.
-Dzieki optymalizacji i wyłączeniu juz raz odwiedzonych stanów czasy w obu algorytmach sie poprawiły,
-jest to szczególnie widoczne dla BFS (N=10) czas z 16.98 zmniejszył się do 8.36  
+Dzieki optymalizacji i wyłączeniu już raz odwiedzonych stanów czasy w obu algorytmach się poprawiły,
+jest to szczególnie widoczne dla BFS (N=10) czas z 12.70 zmniejszył się do 8.23 (w zalezności od uruchomienia). 
 """
