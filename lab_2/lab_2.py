@@ -55,7 +55,7 @@ def bfs_n_hetman(N):
 
         # print(f"bfs sprawdzenie stanu {checked_state_bfs}: {state}")
         # jezeli mamy N hetmanów, znaleziono pełne rozwiązanie
-        if len(state) == N:
+        if len(state) == N and is_safe(state):
             end_time = time.perf_counter() - start_time
             open_states = len(Open)
             return state, end_time, checked_state, open_states
@@ -91,7 +91,8 @@ def dfs_n_hetman(N):
         checked_state += 1
         # print(f"dsf sprawdzenie stanu: {checked_state_dfs}: {state}")
         # jezeli mamy N hetmanów, znaleziono pełne rozwiązanie
-        if len(state) == N:
+        if len(state) == N and  is_safe(state):
+
             end_time = time.perf_counter() - start_time
             open_states = len(Open)
             return state, end_time, checked_state, open_states
