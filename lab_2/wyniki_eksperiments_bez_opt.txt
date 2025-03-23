@@ -1,0 +1,30 @@
+Exsperymenty dla n-hetmanów
+
+wynik dla N = 4
+ BFS - czas: 0.00013970 s, stany Closed: 106, stany Open: 23
+ DFS - czas: 0.00001780 s, stany Closed: 15, stany Open: 6
+==================================================
+Exsperymenty dla n-hetmanów
+
+wynik dla N = 5
+ BFS - czas: 0.00135990 s, stany Closed: 532, stany Open: 119
+ DFS - czas: 0.00002080 s, stany Closed: 21, stany Open: 10
+==================================================
+Exsperymenty dla n-hetmanów
+
+wynik dla N = 6
+ BFS - czas: 0.03313410 s, stany Closed: 3194, stany Open: 719
+ DFS - czas: 0.00003300 s, stany Closed: 28, stany Open: 15
+==================================================
+Exsperymenty dla n-hetmanów
+
+wynik dla N = 7
+ BFS - czas: 1.61334360 s, stany Closed: 22360, stany Open: 5039
+ DFS - czas: 0.00006380 s, stany Closed: 36, stany Open: 21
+==================================================
+Exsperymenty dla n-hetmanów
+
+wynik dla N = 8
+ BFS - czas: 192.67474050 s, stany Closed: 178882, stany Open: 40319
+ DFS - czas: 0.00007300 s, stany Closed: 45, stany Open: 28
+==================================================

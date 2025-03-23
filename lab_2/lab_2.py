@@ -25,11 +25,11 @@ def generate_children(state, N):
         return [state]
     children = []
     # unikanie powtórzeń - optymalizacja
-    #taken_columns = {qy for _, qy in state}
+    taken_columns = {qy for _, qy in state}
 
     for y in range(N):
-        #if y not in taken_columns and is_safe(state, x, y):
-        if is_safe(state, x, y):
+        if y not in taken_columns: #and is_safe(state, x, y):
+        #if is_safe(state, x, y):
             # tworzenie nowego stanu
             new_state = state + [(x, y)]
             checked_state += 1
@@ -116,7 +116,7 @@ def dfs_n_hetman(N):
 
 # metoda do testowania kilku wartości N
 def run_experiments():
-    queens_list = [4, 5, 6, 7, 8, 9, 10]
+    queens_list = [4, 5, 6, 7, 8]
     results = []
     # zapis do pliku
     output_lines = []
@@ -153,7 +153,7 @@ def run_experiments():
         output_lines.append(f" DFS - czas: {dfs_time:.8f} s, stany Closed: {dfs_closed_state}, stany Open: {dfs_open_states}")
         output_lines.append('=' * 50)
 
-    with open("wyniki_eksperiments.txt", "w") as file:
+    with open("wyniki_eksperiments_bez_opt.txt", "w") as file:
         file.write("\n".join(output_lines))
 
     return pd.DataFrame(results)
@@ -194,7 +194,7 @@ def plot_results(df_results):
     axes[2].grid(True)
 
     plt.tight_layout()
-    plt.savefig("wyniki_plot.png")
+    plt.savefig("wyniki_plot_bez_opt.png")
     plt.show()
 
 
