@@ -1,0 +1,45 @@
+Exsperymenty dla n-hetmanów
+
+wynik dla N = 4
+ BFS - czas: 0.00034330 s, stany Closed: 116, stany Open: 13
+ DFS - czas: 0.00007950 s, stany Closed: 64, stany Open: 3
+ BestFS H1 - czas: 0.00012730 s, stany Closed: 72, stany Open: 7
+ BestFS H2 - czas: 0.00009250 s, stany Closed: 42, stany Open: 7
+ BestFS HDOD - czas: 0.00030270 s, stany Closed: 106, stany Open: 23, wartosc: 16
+==================================================
+Exsperymenty dla n-hetmanów
+
+wynik dla N = 5
+ BFS - czas: 0.00210560 s, stany Closed: 542, stany Open: 109
+ DFS - czas: 0.00011810 s, stany Closed: 70, stany Open: 7
+ BestFS H1 - czas: 0.00017220 s, stany Closed: 90, stany Open: 19
+ BestFS H2 - czas: 0.00005190 s, stany Closed: 21, stany Open: 10
+ BestFS HDOD - czas: 0.00542060 s, stany Closed: 532, stany Open: 119, wartosc: 35
+==================================================
+Exsperymenty dla n-hetmanów
+
+wynik dla N = 6
+ BFS - czas: 0.05883920 s, stany Closed: 3380, stany Open: 533
+ DFS - czas: 0.00190540 s, stany Closed: 1030, stany Open: 9
+ BestFS H1 - czas: 0.00345430 s, stany Closed: 1164, stany Open: 91
+ BestFS H2 - czas: 0.00712200 s, stany Closed: 620, stany Open: 31
+ BestFS HDOD - czas: 0.02563150 s, stany Closed: 3208, stany Open: 705, wartosc: 68
+==================================================
+Exsperymenty dla n-hetmanów
+
+wynik dla N = 7
+ BFS - czas: 1.73491330 s, stany Closed: 22546, stany Open: 4853
+ DFS - czas: 0.00404430 s, stany Closed: 1038, stany Open: 15
+ BestFS H1 - czas: 0.00727020 s, stany Closed: 1320, stany Open: 205
+ BestFS H2 - czas: 0.00066700 s, stany Closed: 61, stany Open: 22
+ BestFS HDOD - czas: 0.25100190 s, stany Closed: 22362, stany Open: 5037, wartosc: 119
+==================================================
+Exsperymenty dla n-hetmanów
+
+wynik dla N = 8
+ BFS - czas: 209.48986850 s, stany Closed: 181724, stany Open: 37477
+ DFS - czas: 0.04500270 s, stany Closed: 15475, stany Open: 14
+ BestFS H1 - czas: 0.07375430 s, stany Closed: 15895, stany Open: 316
+ BestFS H2 - czas: 0.05821450 s, stany Closed: 6966, stany Open: 277
+ BestFS HDOD - czas: 2.82576600 s, stany Closed: 179176, stany Open: 40025, wartosc: 192
+==================================================
