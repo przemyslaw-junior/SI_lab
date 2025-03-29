@@ -358,7 +358,11 @@ if __name__ == "__main__":
 
 
 """
-WNIOSKI
+WNIOSKI:
 
+Algorytm BestFS z heurystykami H1 i H2 zredukował znacząco czasy w porównaniu do BFS
+widoczne w szczególniści przy wiekszych N.
+Heurystyka HDOD jest bardzo mocno kosztowna obliczeniowo (liczenie odległości 'Manhattan' każdej pary queens)
+Dystans 3 w 'Manhattan' nie zawse prowadzi do szybkiego znalezienia poprawnego rozwiązania.
 
 """
