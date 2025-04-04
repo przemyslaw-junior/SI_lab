@@ -146,33 +146,42 @@ def main():
     best_value = move_evaluation[best_move]
     
     # podsumowanie wyników
-    print("wynik analizy algorytmu alpha-beta dla gry w monety:")
-    print("====================================================")
-    print("wizualizacja drzewa przeszukiwania (kolejność wezłów i zmian alpha/beta):")
-    for line in node_order:
-        print(line)
-    print("====================================================")
-    
-    print("zdarzenia przycinania:")
-    if prune_events:
-        for event in prune_events:
-            print(" - " + event)
-    else:
-        print(" - brak przycieć")
-    
-    print("====================================================")
-    print("liczba odwiedzonych wezłów:", node_count)
-    print("ocena ruch w korzeniu:")
-    for move, value in move_evaluation.items():
-        print(f" - ruch {move} (pobranie {move} monety): {value}")
-    print("====================================================")
-    
-    # uzasadnienie wyboru
-    if best_value == win:
-        print(f"Najlepszy ruch gracza A to pobranie: {best_move} monety, co gwarantuje wygraną")
-    else:
-        print(f"żaden ruch nie gwarantuje zwyciestwa, najlepszy ruch to pobranie: {best_move} monety,"
-              "który minimalizuje porazkę. Pod warunkiem nierozsadnej gry gracza B.")
+    with open('wyniki.txt', 'w', encoding="utf-8") as f:
+        
+        def print_and_write(*args, **kwargs):
+            text = " ".join(map(str, args))
+            print(text, **kwargs)
+            f.write(text + "\n")
+        
+        print_and_write("wynik analizy algorytmu alpha-beta dla gry w monety:")
+        print_and_write("====================================================")
+        print_and_write("wizualizacja drzewa przeszukiwania (kolejność wezłów i zmian alpha/beta):")
+        for line in node_order:
+            print_and_write(line)
+        print_and_write("====================================================")
+        
+        print_and_write("zdarzenia przycinania:")
+        if prune_events:
+            for event in prune_events:
+                print_and_write(" - " + event)
+        else:
+            print_and_write(" - brak przycieć")
+        
+        print_and_write("====================================================")
+        print_and_write("liczba odwiedzonych wezłów:", node_count)
+        print_and_write("ocena ruch w korzeniu:")
+        for move, value in move_evaluation.items():
+            print_and_write(f" - ruch {move} (pobranie {move} monety): {value}")
+        print_and_write("====================================================")
+        
+        # uzasadnienie wyboru
+        if best_value == win:
+            print_and_write(f"Najlepszy ruch gracza A to pobranie: {best_move} monety, co gwarantuje wygraną")
+        else:
+            print_and_write(f"żaden ruch nie gwarantuje zwyciestwa, najlepszy ruch to pobranie: {best_move} monety,"
+                "który minimalizuje porazkę. Pod warunkiem nierozsadnej gry gracza B.")
+        
+      
   
 # uruchomienie programu      
 if __name__ == "__main__":
