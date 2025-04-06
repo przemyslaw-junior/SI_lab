@@ -146,7 +146,7 @@ def main():
     best_value = move_evaluation[best_move]
     
     # podsumowanie wyników
-    with open('wyniki.txt', 'w', encoding="utf-8") as f:
+    with open(r'C:\Users\przem\Documents\SI\SI_lab\lab_4\wyniki.txt', 'w', encoding="utf-8") as f:
         
         def print_and_write(*args, **kwargs):
             text = " ".join(map(str, args))
