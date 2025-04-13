@@ -152,12 +152,13 @@ def plot_history(best_history, avg_history):
 
 # Główna część programu
 if __name__ == "__main__":
-    board_size = 8              
-    population_size = 10      
-    tournament_size = 5         
-    max_generations = 1000       
-    crossover_probability = 0.7
-    mutation_probability = 0.8
+    board_size = 8
+    population_size = 10
+    tournament_size = 9
+    max_generations = 1000
+    crossover_probability = 0.3
+    mutation_probability = 0.9
+
     
     best_individual, best_fitness, best_history, avg_history, generations = evolutionary_algorithm(
         board_size, population_size, tournament_size, max_generations, crossover_probability, mutation_probability)

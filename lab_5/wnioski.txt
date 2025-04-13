@@ -1,3 +1,25 @@
+Wnioski:
+
+Na podstawie przeprowadzonych testów można stwierdzić,
+że przy wiekszej liczbie hetmanów (np. 20) jak i osobników / populacij (np. 1000) i wiekszej ilości turniejów (np. 7)
+oraz z niższym prawdopodobieństwem mutacji (np. 0.1) algorytm wydaje się dzialać stabilniej i szybciej zbliżac się do
+rozwiazań z minimalną liczba atakow (przeważnie 1).
+Przy mniejszej populacji (np. 100) i mutacji (np. 0.3) wyniki są rozproszone / losowe na co wskazuje liczba ataków (1-4)
+Natomiast zmniejszajac liczbę hetmanów (np. 8) jak i liczbę osoników / populacji (np. 10)
+wyniki znacząco są uzależnione od ustawień parametrów. Umiarkowane wartości operatorów crossover (np. 0.7) i mutacji (np. 3)
+mogą osiągnąć dobre stabilne wyniki.
+Natomiast przy mutacji (np. 9) uzyskujemy dużą niestabilność / losowość
+Zwiększenie rozmiaru turnirjów (np. 9) zwieksza presję selekcji, co może powodować przyśpieszene redukcji liczby ataków.
+
+Wartość prawdopodobieństwa krzyżowego (np. 0.5-0.7) również wpływa na rozwiązania,
+bardziej umiarkowane wartości sprzyjają szybszemu osiagnieciu stabilnego stanu.
+
+Dla wiekszej ilości hetmanów wieksza populacja i wiekszy turniej przy niskiej mutacji daja stabilne i spójne wyniki.
+Dla mniejszej ilości hetmanów i małej populacji algorytm staję się bardziej podatny na zmiany parametrów,
+umiarkoane ustawienia mogą dać dobre i stabilne wyniki, ale wysokie wartści mutacji mogą wpłynąć na stabilność.
+
+
+
 Parametry do testowania:
 
 test 1
@@ -24,11 +46,58 @@ test 3
     crossover_probability = 0.6
     mutation_probability = 0.1
 
-wnioski:
-Na podstawie przeprowadzonych testów mozna stwierdzić,
-że przy wiekszej liczbie osobników / populacij (np. 1000) i wiekszej ilości turniejów (np. 7)
-oraz z niższym prawdopodobieństwem mutacji (np. 0.1) algorytm wydaje się dzialać stabilniej i szybciej zbliżac się do
-rozwiazań z minimalną liczba atakow (przeważnie 1)
-Przy mniejszej populacji (np. 100) i mutacji (np. 0.3) wyniki są rozproszone / losowe na co wskazuje liczba ataków (1-4)
-Wartość prawdopodobieństwa krzyżowego (np. 0.5-0.7) również wpływa na rozwiązania,
-bardziej umiarkowane wartości sprzyjają szybszemu osiagnieciu stabilnego stanu.
+test 4
+    board_size = 8
+    population_size = 10
+    tournament_size = 5
+    max_generations = 1000
+    crossover_probability = 0.7
+    mutation_probability = 0.3
+
+test 5
+    board_size = 8
+    population_size = 10
+    tournament_size = 5
+    max_generations = 1000
+    crossover_probability = 0.3
+    mutation_probability = 0.9
+
+test 6
+    board_size = 8
+    population_size = 10
+    tournament_size = 5
+    max_generations = 1000
+    crossover_probability = 0.3
+    mutation_probability = 0.3
+
+test 7
+    board_size = 8
+    population_size = 10
+    tournament_size = 9
+    max_generations = 1000
+    crossover_probability = 0.3
+    mutation_probability = 0.3
+
+test 8
+    board_size = 8
+    population_size = 10
+    tournament_size = 9
+    max_generations = 1000
+    crossover_probability = 0.9
+    mutation_probability = 0.3
+
+test 9
+    board_size = 8
+    population_size = 10
+    tournament_size = 9
+    max_generations = 1000
+    crossover_probability = 0.9
+    mutation_probability = 0.9
+
+test 10
+    board_size = 8
+    population_size = 10
+    tournament_size = 9
+    max_generations = 1000
+    crossover_probability = 0.3
+    mutation_probability = 0.9
