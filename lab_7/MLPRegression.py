@@ -105,7 +105,7 @@ class MLPModel:
             error = y_pred - y_value
             
             # aktualizacja wag wejściowych
-            #gradient dla każdej wagi
+            # gradient dla każdej wagi
             gradient_output = error * biased_hidden
             self.output_weights -= self.learning_rate * gradient_output
             
@@ -174,7 +174,7 @@ plt.close()
 # eksperymenty: wpływ neuronóe, epok, learning rate (współczynnika uczenia)
 
 # wpływ liczby neuronów
-neuron_list = [5, 10, 15, 20, 25, 30, 35, 45, 50, 55, 60, 65, 70, 75, 80, 85, 90, 95, 100]
+neuron_list = [5, 10, 50, 100]
 mae_neurons = []
 for n in neuron_list:
     model = MLPModel(n, learning_rate, num_epochs) 
@@ -191,7 +191,7 @@ plt.close()
 
 
 # wpływ liczby epok
-epoch_list = [100, 500, 1000, 2000, 3000, 4000, 5000, 6000, 7000, 8000, 9000, 10000]
+epoch_list = [100, 2000, 5000, 10000]
 mae_epochs = []
 for e in epoch_list:
     model = MLPModel(num_hidden_neurons, learning_rate, e) 
@@ -208,7 +208,7 @@ plt.close()
 
 
 # wpływ współczynnika uczenia
-learning_rate_list = [0.0001, 0.0005, 0.001, 0.005, 0.01, 0.05, 0.1]
+learning_rate_list = [0.0001, 0.001, 0.01, 0.1]
 mae_learning_rate = []
 for lr in learning_rate_list:
     model = MLPModel(num_hidden_neurons, lr, num_epochs) 
